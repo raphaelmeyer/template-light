@@ -25,18 +25,25 @@ namespace
         std::cout << "  RUN  " << testcase.name << "\n";
         try {
           testcase.test();
-          std::cout << "  OK   " << testcase.name << "\n";
+          std::cout << "  \033[1;32mOK\033[0m   " << testcase.name << "\n";
           ++passed;
         } catch(std::exception const & e) {
-          std::cout << "  FAIL " << testcase.name << "\n";
+          std::cout << "  \033[1;31mFAIL\033[0m " << testcase.name << "\n";
           std::cout << "       " << e.what() << "\n";
           ++failed;
         }
+        std::cout << "\n";
       }
-      std::cout << "\n";
     }
-    std::cout << "Passed : " << passed << "  Failed : " << failed << "\n";
-    return failed == 0;
+
+    if(failed > 0) {
+      std::cout << "\033[1;31mFAILED\033[0m : "
+                << failed << " failed (" << passed << " passed)" << "\n";
+      return false;
+    }
+
+    std::cout << "\033[1;32mPASSED\033[0m : " << passed << " passed\n";
+    return true;
   }
 
 } // namespace
