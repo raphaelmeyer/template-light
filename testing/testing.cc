@@ -25,11 +25,10 @@ namespace
         std::cout << "  RUN  " << testcase.name << "\n";
         try {
           testcase.test();
-          std::cout << "  \033[1;32mOK\033[0m   " << testcase.name << "\n";
+          std::cout << "    \033[1;32mOK\033[0m\n";
           ++passed;
         } catch(std::exception const & e) {
-          std::cout << "  \033[1;31mFAIL\033[0m " << testcase.name << "\n";
-          std::cout << "       " << e.what() << "\n";
+          std::cout << "    \033[1;31mFAIL\033[0m : " << e.what() << "\n";
           ++failed;
         }
         std::cout << "\n";
@@ -53,6 +52,13 @@ TestGroup::TestGroup(std::string group, std::initializer_list<TestCase> const & 
     register_test(group, testcase);
   }
 }
+
+void Require(bool condition) {
+  if(not condition) {
+      throw std::logic_error{"condition failed"};
+  }
+}
+
 
 int main() {
   if(not run_tests()) {

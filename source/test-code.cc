@@ -8,9 +8,10 @@ TestGroup group{
   "Test Group",
   {
     TestCase{"when ... then ...", []{
-      Require(ns::answer(), IsNot(42));
-    }}
+      Require(ns::answer() != 42);
+    }},
   }
 };
 
 } // namespace
+
