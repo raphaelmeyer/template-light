@@ -1,3 +1,5 @@
+#include "code.h"
+
 namespace ns {
 
 int answer() {
