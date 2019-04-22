@@ -1,4 +1,6 @@
 dist: xenial
 
-install: ninja-build
+before_install:
+  - sudo apt-get install -y ninja-build
+
 script: ./build
