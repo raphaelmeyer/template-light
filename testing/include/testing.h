@@ -14,6 +14,9 @@ public:
   TestGroup(std::string name, std::initializer_list<TestCase> const & testcases);
 };
 
+using Scenario = TestCase;
+using Feature = TestGroup;
+
 template<typename E>
 struct Equals {
   Equals(E expected) : expected_(expected) {}

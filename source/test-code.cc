@@ -4,10 +4,10 @@
 
 namespace {
 
-TestGroup group{
-  "Test Group",
+Feature feature{
+  "Feature xyz",
   {
-    TestCase{"when ... then ...", []{
+    Scenario{"when ... then ...", []{
       Require(ns::answer(), Equals(23));
       Require(ns::answer(), Not(42));
     }},
