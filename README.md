@@ -1,6 +1,6 @@
 # Lightweight C++ CMake Template
 
-[![Build Status](https://travis-ci.org/raphaelmeyer/template-light.svg?branch=master)](https://travis-ci.org/raphaelmeyer/template-light)
+[![Build Status](https://travis-ci.com/raphaelmeyer/template-light.svg?branch=master)](https://travis-ci.com/raphaelmeyer/template-light)
 
 ## Getting Started
 
