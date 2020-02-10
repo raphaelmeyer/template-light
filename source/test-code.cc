@@ -1,18 +1,13 @@
-#include <testing.h>
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include <doctest/doctest.h>
 
 #include "code.h"
 
 namespace {
 
-Feature feature{
-  "Feature xyz",
-  {
-    Scenario{"when ... then ...", []{
-      Require(ns::answer(), Equals(23));
-      Require(ns::answer(), Not(42));
-    }},
-  }
-};
+TEST_CASE("when ... then ...") {
+    CHECK(ns::answer() == 23);
+    CHECK(ns::answer() != 42);
+}
 
 } // namespace
-
