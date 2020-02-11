@@ -1,10 +1,11 @@
 #!/bin/bash
 
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-build_dir="${script_dir}/_build"
 
-export CC=clang
-export CXX=clang++
+build_dir="${WORKSPACE:-${script_dir}/_build}"
+
+export CC="${CC:-clang}"
+export CXX="${CXX:-clang++}"
 
 if [ ! -d "${build_dir}" ] ; then
     mkdir -p "${build_dir}"
