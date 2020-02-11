@@ -1,3 +1,3 @@
-FROM base/archlinux
+FROM archlinux
 RUN pacman -Syu --noconfirm clang cmake ninja
 ENV CC=clang CXX=clang++
