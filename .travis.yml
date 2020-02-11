@@ -1,6 +1,9 @@
-dist: bionic
+service:
+  - docker
 
 before_install:
-  - sudo apt-get install -y ninja-build
+  - docker build -t raphaelmeyer/arch-clang-ninja .travis
 
-script: ./build
+script:
+  - pwd
+  - ls -lha
