@@ -7,3 +7,5 @@
     git clone https://github.com/raphaelmeyer/template-light.git
     cd template-light
     ./build
+
+bla bla bal
